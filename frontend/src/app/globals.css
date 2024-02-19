@@ -1,10 +1,26 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Protest+Guerrilla&display=swap');
 
 html,
 body {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+}
+
+.protest-guerrilla-regular {
+  font-family: "Protest Guerrilla", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.dancing-script-hell {
+  font-family: "Dancing Script", cursive;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
 }

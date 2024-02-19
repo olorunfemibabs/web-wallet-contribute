@@ -1,0 +1,55 @@
+[
+    {
+      "type": "constructor",
+      "name": "constructor",
+      "inputs": []
+    },
+    {
+      "type": "struct",
+      "name": "core::integer::u256",
+      "members": [
+        {
+          "name": "low",
+          "type": "core::integer::u128"
+        },
+        {
+          "name": "high",
+          "type": "core::integer::u128"
+        }
+      ]
+    },
+    {
+      "type": "function",
+      "name": "accept_deposit",
+      "inputs": [
+        {
+          "name": "amount",
+          "type": "core::integer::u256"
+        }
+      ],
+      "outputs": [],
+      "state_mutability": "external"
+    },
+    {
+      "type": "function",
+      "name": "withdraw",
+      "inputs": [
+        {
+          "name": "amount",
+          "type": "core::integer::u256"
+        },
+        {
+          "name": "to",
+          "type": "core::starknet::contract_address::ContractAddress"
+        }
+      ],
+      "outputs": [],
+      "state_mutability": "external"
+    },
+    {
+      "type": "event",
+      "name": "wings::Wings_club::Event",
+      "kind": "enum",
+      "variants": []
+    }
+  ]
