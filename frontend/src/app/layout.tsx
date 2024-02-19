@@ -7,8 +7,8 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Aeros Club",
-  description: "Get our membership on this platform",
+  title: "Aeros flying club",
+  description: "Platinum flying club",
 };
 
 export default function RootLayout({
