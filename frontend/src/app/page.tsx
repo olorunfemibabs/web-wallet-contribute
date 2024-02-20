@@ -8,10 +8,8 @@ import { UserRound } from 'lucide-react';
 
 
 export default function Home() {
-  const { address } = useAccount();
-  useEffect(() => {
-
-  }, [])
+  const { address, account } = useAccount();
+  
 
   const shortenedAddress = useMemo(() => {
     if (!address) return "";
@@ -22,7 +20,7 @@ export default function Home() {
     <main className="flex flex-1 flex-col">
       <div className="flex justify-between items-center mb-6">
         <h2 className="text-2xl font-semibold"></h2>
-        <p className="text-gray-600 flex items-center gap-x-2"><UserRound size={20} strokeWidth={2} /><span className="text-xs">{ address }</span></p>
+        <p className="text-gray-600 flex items-center gap-x-2"><UserRound size={20} strokeWidth={2} /><span className="text-xs">{ shortenedAddress }</span></p>
       </div>
       
       <div className="m-auto">
