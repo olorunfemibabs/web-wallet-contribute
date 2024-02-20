@@ -1,13 +1,22 @@
 "use client";
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import { useAccount, useConnect, useDisconnect } from "@starknet-react/core"
 
-export default function NavBar({address, connectors, connect, disconnect}) {
+export default function NavBar() {
 
-    // const { connect, connectors } = useConnect()
-    // const { disconnect } = useDisconnect()
-    // const { address } = useAccount()
+    const { connect, connectors } = useConnect()
+    const { disconnect } = useDisconnect()
+    const { address, account } = useAccount()
 
+    // useEffect(() => {
+
+    //     const setData = () => {
+    //         localStorage.setItem('provider', account);
+    //     }
+        
+    //     console.log(account)
+    // }, [account, connect])
+    
 
   return (
     <div className="flex justify-between my-auto">
@@ -15,7 +24,7 @@ export default function NavBar({address, connectors, connect, disconnect}) {
       <h4 className="font-bold text-[25px] text-slate-600 text-shadow">Aeros <span className='dancing-script-hell text-[12px]'>Club</span></h4>
     </div>
 
-    <div></div>
+    {/* <h4>{provider ?? provider}</h4> */}
 
     <div className="">
       {address && address.length > 0 ?
@@ -32,7 +41,6 @@ export default function NavBar({address, connectors, connect, disconnect}) {
         } 
         </span> 
       } 
-      
       
     </div>
     
