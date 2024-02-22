@@ -1,36 +1,32 @@
 "use client";
 
 import React, { useState } from "react";
-import NavBar from '@/components/NavBar';
-import { Contract } from 'starknet';
-import abi from '@/abi.json';
+import { Contract } from "starknet";
+import abi from "@/abi.json";
 // import chains from '@/components/starknet-provider'
+import { useAccount } from "@starknet-react/core";
 
 const BuyMembership = () => {
-
+  const { address, account } = useAccount();
   const [amount, setAmount] = useState("");
   const [recipientAddress, setRecipientAddress] = useState("");
 
-  const contractAddress = "0x063b7280f7b185ca722a9a9d1afd805755241c5f614b991d1434f2f9e5c8c65b";
+  const contractAddress =
+    "0x063b7280f7b185ca722a9a9d1afd805755241c5f614b991d1434f2f9e5c8c65b";
 
-  const provider = "0x02b0761303c6cd1d6066bcfa74473e9e453e99c493d74d1b732325c2549867e6";
-
-  const writeContract = new Contract(abi, contractAddress, provider);
+  const writeContract = new Contract(abi, contractAddress, account);
 
   const handleBuy = async () => {
     // Logic for swapping process
 
     try {
-      await writeContract.accept_deposit(amount)
-      alert('deposit successful')
-      
+      await writeContract.accept_deposit(amount);
+      alert("deposit successful");
     } catch (error) {
-        alert("error could not deposit")
+      alert("error could not deposit");
+      console.log(error);
     }
-
-
   };
-
 
   return (
     <div className="container flex-1">

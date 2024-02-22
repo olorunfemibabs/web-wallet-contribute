@@ -1,11 +1,10 @@
-"use client";
 import React from "react";
 import { useAccount, useConnect, useDisconnect } from "@starknet-react/core";
 
-export default function NavBar({ address, connectors, connect, disconnect }) {
-  // const { connect, connectors } = useConnect()
-  // const { disconnect } = useDisconnect()
-  // const { address } = useAccount()
+const NavBar = () => {
+  const { connect, connectors } = useConnect();
+  const { disconnect } = useDisconnect();
+  const { address, account } = useAccount();
 
   return (
     <div className="flex justify-between my-auto">
@@ -15,7 +14,7 @@ export default function NavBar({ address, connectors, connect, disconnect }) {
         </h4>
       </div>
 
-      <div></div>
+      {/* <h4>{provider ?? provider}</h4> */}
 
       <div className="">
         {address && address.length > 0 ? (
@@ -29,7 +28,7 @@ export default function NavBar({ address, connectors, connect, disconnect }) {
           </button>
         ) : (
           <span>
-            {connectors.map((connector: any) => (
+            {connectors.map((connector) => (
               <button
                 key={connector.id}
                 className="bg-gradient-to-r from-indigo-200 shadow hover:shadow-lg text-xs via-cyan-200 to-blue-300 text-slate-600 p-2 font-bold rounded-md"
@@ -43,4 +42,6 @@ export default function NavBar({ address, connectors, connect, disconnect }) {
       </div>
     </div>
   );
-}
+};
+
+export default NavBar;
