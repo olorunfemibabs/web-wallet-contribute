@@ -24,7 +24,7 @@ export default function Home() {
       </div>
       
       <div className="m-auto">
-        <Link href={'/get-membership'} className="px-6 py-2 bg-blue-700">Get Membership</Link>
+        <Link href={'/buy-membership'} className="px-6 py-2 bg-blue-700">Get Membership</Link>
       </div>
     </main>
   );
