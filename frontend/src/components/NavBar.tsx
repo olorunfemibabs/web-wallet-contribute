@@ -6,8 +6,7 @@ export default function NavBar() {
 
     const { connect, connectors } = useConnect()
     const { disconnect } = useDisconnect()
-    const { address, account } = useAccount()
-  
+    const { address, account } = useAccount()  
     
 
   return (
