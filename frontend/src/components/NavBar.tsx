@@ -25,7 +25,7 @@ export default function NavBar() {
         <span>
         {
           connectors.map((connector) => (
-            <button className="bg-gradient-to-r from-indigo-200 shadow hover:shadow-lg text-xs via-cyan-200 to-blue-300 text-slate-600 p-2 font-bold rounded-md" onClick={(() => connect({connector}))}>
+            <button key={connector.id} className="bg-gradient-to-r from-indigo-200 shadow hover:shadow-lg text-xs via-cyan-200 to-blue-300 text-slate-600 p-2 font-bold rounded-md" onClick={(() => connect({connector}))}>
               Connect {connector.id}
             </button>
           ))
